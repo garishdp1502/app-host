@@ -5,11 +5,11 @@
   <div class="visible-md visible-lg pull-right">
 
     <% if can? :destroy, @plat %>
-      <%=link_to '删除', app_plat_path(@app, @plat), data: {:confirm => 'Are you sure?'}, class:"btn-danger", :method => :delete %>
+      <%=link_to 'Delete', app_plat_path(@app, @plat), data: {:confirm => 'Are you sure?'}, class:"btn-danger", :method => :delete %>
     <% end %>
 
     <% if can? :update, @plat %>
-      <%=link_to '修改', edit_app_plat_path(@app, @plat), class:"btn-info" %>
+      <%=link_to 'Modify', edit_app_plat_path(@app, @plat), class:"btn-info" %>
     <% end %>
 
   </div>
@@ -36,16 +36,16 @@
 
   <div class="plat-info">
     <span>
-      平台: <%=@plat.plat_des_name%> 包数: <%=@plat.pkgs.count%> 
+      Platform: <%=@plat.plat_des_name%> Number of packages: <%=@plat.pkgs.count%> 
       <% if @plat.bundle_id.present? %>
-       包名: <%=@plat.bundle_id%>  
+       Package Name: <%=@plat.bundle_id%>  
       <% end %>
     </span>
   </div>
 
   <% if can? :create, Pkg %>
     <div class="visible-md visible-lg pull-right">
-      <%=link_to '上传', new_plat_pkg_path(@plat), class:"btn btn-primary ui-plat" %>
+      <%=link_to 'Upload', new_plat_pkg_path(@plat), class:"btn btn-primary ui-plat" %>
     </div>
   <% end %>
 
@@ -77,7 +77,7 @@
               data: {ids: ids.join(','),app_id:<%=params[:app_id]%>},
             })
             .fail(function() {
-              alert("修改顺序失败")
+              alert("Failed to change order")
               location.reload();
             })
 

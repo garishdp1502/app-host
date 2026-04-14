@@ -26,7 +26,7 @@
         <key>PayloadIdentifier</key>
         <string>com.plsi.ios-config-server.4d4dc30d-cc8f-11e8-8847-00163e0e27d5</string>
         <key>PayloadDescription</key>
-        <string>OTA助手，获取 UDID</string>
+        <string>OTA Assistant, Get UDID</string>
         <key>PayloadType</key>
         <string>Profile Service</string>
     </dict>

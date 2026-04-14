@@ -86,10 +86,10 @@ module PkgAdapter
     def ext_info
       info = {
         "包信息" => [
-          "包名: #{self.app_bundle_id}",
-          "体积: #{app_size_mb}MB",
+          "Package Name: #{self.app_bundle_id}",
+          "Volume: #{app_size_mb}MB",
           "MD5: #{pkg_mb5}",
-          "最小SDK: #{@manifest.min_sdk_ver}",
+          "Minimum SDK: #{@manifest.min_sdk_ver}",
         ],
         "permissions" => @manifest.use_permissions,
       }

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         sign_in user
         redirect_to root_path
     else
-        flash[:error] = '用户名或密码错误'
+        flash[:error] = 'Username or password incorrect.'
         redirect_to new_session_path
     end
   end

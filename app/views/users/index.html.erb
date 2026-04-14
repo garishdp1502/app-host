@@ -1,14 +1,14 @@
 <%=render 'layouts/header'%>
 <div class="container user index">
 
-  <%=link_to '新建', new_user_path ,class:"pull-right user-add" %>
+  <%=link_to 'New', new_user_path ,class:"pull-right user-add" %>
   <table class="table table-hover">
     <thead>
       <tr>
         <th>ID</th>
-        <th>用户</th>
-        <th>角色</th>
-        <th>操作</th>
+        <th>User</th>
+        <th>Role</th>
+        <th>Operate</th>
       </tr>
     </thead>
     <tbody>
@@ -19,11 +19,11 @@
           <td><%=user.role%></td>
           <td>
             <% if can? :update, user, current_user %>
-              <%=link_to '编辑', edit_user_path(user) %>
+              <%=link_to 'Edit', edit_user_path(user) %>
             <% end %>
 
             <% if can? :destroy, user, current_user %>
-              <%=link_to '删除', user_path(user) ,class:"btn-danger",data: {:confirm => 'Are you sure?'}, :method => :delete %>
+              <%=link_to 'Delete', user_path(user) ,class:"btn-danger",data: {:confirm => 'Are you sure?'}, :method => :delete %>
             <% end %>
           </td>
         </tr>        

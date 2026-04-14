@@ -24,7 +24,7 @@
         </div>
         <div class="title"><%=@pkg.name%></div>
         <div class="info">
-          <%="版本:#{@pkg.version}, build:#{@pkg.build}"%>, <%=@pkg.size_mb%>MB 
+          <%="Version:#{@pkg.version}, build:#{@pkg.build}"%>, <%=@pkg.size_mb%>MB 
           <br>
           <%=@pkg.created_at&.strftime("%Y-%m-%d %R") %> 
         </div>
@@ -32,11 +32,11 @@
 
       <% if @download_url.present? %>
         <a class="download-btn" href="<%=@download_url%>">
-          下载
+          Download
         </a>
       <% else %>
         <a class="download-btn">
-          无法下载
+          Unable to download
         </a>
       <% end %>
 
@@ -45,14 +45,14 @@
 
   <div class="qrcode">
     <div id="qrcode"></div>
-    <label>或者用手机扫描下面的二维码安装</label>
+    <label>Or scan the QR code below with your phone to install.</label>
   </div>
 
 
   <% if @pkg.features.present? %>
     <div class="features">
       <div class="wrap">
-        <h3 class="title">变更描述:</h3>
+        <h3 class="title">Change Description:</h3>
         <p class="info">
           <%@pkg.features.split("\n").each do |line|%>
             <%=line%><br/>
@@ -67,7 +67,7 @@
     <div class="extend-info">
       <div class="wrap">
         <div class="open-icon">
-          <span>扩展信息:</span>
+          <span>Extended Information:</span>
           <a class="glyphicon glyphicon-chevron-down"></a>
         </div>
         <p class="info" style="display: none;">
@@ -96,7 +96,7 @@
   <% if @history.present? %>
     <div class="history">
       <div class="wrap">
-        <h3 class="title">历史版本</h3>
+        <h3 class="title">Historical versions</h3>
         <div class="day-block">
           <% @history.each do |key,value| %>
             <label class="title">
@@ -124,7 +124,7 @@
 
 <script type="text/javascript">
 
-  var isWeixin = function () { //判断是否是微信
+  var isWeixin = function () { //Determine if it is WeChat
     var ua = navigator.userAgent.toLowerCase();
     return ua.match(/MicroMessenger/i) == "micromessenger";
   };

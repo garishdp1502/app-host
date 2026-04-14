@@ -38,16 +38,16 @@ class UsersController < ApplicationController
     if current_user.admin? || params[:id].to_i == current_user.id
       @user = User.find_by_id params[:id]
     else
-      raise "无权操作"
+      raise "No permission to operate"
     end
     
     @user.password = params[:user][:password]
     if params[:user][:password].length < User::MIN_PWD_LEN
-      flash[:error] = "密码少于#{User::MIN_PWD_LEN}位"
+      flash[:error] = "Fewer than the password#{User::MIN_PWD_LEN}Bit"
       redirect_to edit_user_path(@user) and return
     end
     if @user.save
-      flash[:alert] = '修改成功'  
+      flash[:alert] = 'Modification successful'  
       redirect_to root_path
     else
       flash[:error] = @user.errors.full_messages
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
       @user.destroy!
       redirect_to users_path
     else
-      raise "无权操作"
+      raise "No permission to operate"
     end
   end
 

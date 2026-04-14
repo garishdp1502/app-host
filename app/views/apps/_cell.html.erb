@@ -14,21 +14,21 @@
           <%=app.name%>
           <span class="date-label">
             <% if last_pkg.present? %>
-              <%=time_ago_in_words(last_pkg.updated_at)%>前
+              <%=time_ago_in_words(last_pkg.updated_at)%>Forward
             <% end %>
           </span>
         </span>
         <div class="halving-line">---</div>
 
         <span class="sub-title">
-          包总数：<span><%=app.pkgs.count%></span>
+          Total number of packages：<span><%=app.pkgs.count%></span>
         </span> 
         <span class="sub-title">
-          渠道数：<span><%=app.plats.count%></span>
+          Number of channels：<span><%=app.plats.count%></span>
         </span>
         <% if last_pkg.present? %>
           <span class="sub-title visible-md visible-lg">
-            最新包：<span><%=last_pkg.build%> <%=last_pkg.plat&.name%></span>
+            Latest package：<span><%=last_pkg.build%> <%=last_pkg.plat&.name%></span>
           </span>
         <% end %>
        

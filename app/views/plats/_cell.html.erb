@@ -9,7 +9,7 @@
         <span class="title">
           <%=pkg.file_nick_name%>
           <span class="date-label tint-text">
-            <%=time_ago_in_words pkg.created_at %>前
+            <%=time_ago_in_words pkg.created_at %>Forward
           </span>
         </span>
 
@@ -22,12 +22,12 @@
 
           <% unless (browser.platform.ios? && !pkg.ios?) || (browser.platform.android? && !pkg.android?) %>
             <a class="download-btn" href="<%=download_url%>">
-              下载
+              Download
             </a>
           <% end %>
 
           <% if can? :destroy, pkg %>
-            <%=button_to '删除', plat_pkg_path(pkg.plat, pkg), form_class: "delete_btn", class:"btn-danger", data: {:confirm => 'Are you sure?'}, :method => :delete %>
+            <%=button_to 'delete', plat_pkg_path(pkg.plat, pkg), form_class: "delete_btn", class:"btn-danger", data: {:confirm => 'Are you sure?'}, :method => :delete %>
           <% end %>
           
         </div>

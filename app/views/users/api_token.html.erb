@@ -1,7 +1,7 @@
 <%=render 'layouts/header'%>
 
 <div class="container user api_token">
-  <h3>Api上传方式</h3>
+  <h3>Api Upload method</h3>
   <hr>
   
   <h4>ApiToken</h4>
@@ -9,6 +9,6 @@
   <hr>
   
   <h4>USEGAE:</h4>
-  curl --form plat_id=<span class="alert-danger">34</span> --form file_nick_name=<span class="alert-danger">file_nick_name(可选)</span> --form token=<span class="alert-danger"><%=current_user.api_token%></span> --form features=<span class="alert-danger">features(可选)</span> --form file=<span class="alert-danger">@/xx/xx.ipa</span> <%="#{request.base_url}"%>/api/pkgs
+  curl --form plat_id=<span class="alert-danger">34</span> --form file_nick_name=<span class="alert-danger">file_nick_name(Optional)</span> --form token=<span class="alert-danger"><%=current_user.api_token%></span> --form features=<span class="alert-danger">features(Optional)</span> --form file=<span class="alert-danger">@/xx/xx.ipa</span> <%="#{request.base_url}"%>/api/pkgs
 
 </div>
