@@ -76,34 +76,34 @@ module PkgAdapter
       if @provision.present?
         devices = @provision["ProvisionedDevices"];
         info = {
-          "包类型" => devices ? "Ad-hoc" : "Release",
-          "包信息" => [
-            "包名: #{self.app_bundle_id}",
-            "体积: #{app_size_mb}MB",
+          "Package type" => devices ? "Ad-hoc" : "Release",
+          "Package Information" => [
+            "Package Name: #{self.app_bundle_id}",
+            "Size: #{app_size_mb}MB",
             "MD5: #{pkg_mb5}"
           ],
-          "描述文件" => [
-            "名称: #{@provision['Name']}",
+          "Description file" => [
+            "Name: #{@provision['Name']}",
             "TeamName: #{@provision['TeamName']}",
             "TeamID: #{@provision['TeamIdentifier']&.join(',')}",
-            "创建时间: #{@provision['CreationDate']}",
-            "过期时间: #{@provision['ExpirationDate']}",
+            "Creation time: #{@provision['CreationDate']}",
+            "Expiration time: #{@provision['ExpirationDate']}",
             "UUID: #{@provision['UUID']}",
           ],
           "Entitlements" => @provision['Entitlements']&.map{|k,v| "#{k}: #{v}" },
         }
       else
         info = {
-          "包类型" => "未知",
-          "包信息" => [
-            "包名: #{self.app_bundle_id}",
-            "体积: #{app_size_mb}MB",
+          "Package type" => "unknown",
+          "Package Information" => [
+            "Package Name: #{self.app_bundle_id}",
+            "Size: #{app_size_mb}MB",
             "MD5: #{pkg_mb5}"
           ]
         }
       end
       if devices
-        info["包含设备 (#{devices.count}台)"] = devices
+        info["Includes equipment (#{devices.count})"] = devices
       end
       info
     end

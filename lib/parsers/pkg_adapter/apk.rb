@@ -85,7 +85,7 @@ module PkgAdapter
 
     def ext_info
       info = {
-        "包信息" => [
+        "Package Information" => [
           "Package Name: #{self.app_bundle_id}",
           "Volume: #{app_size_mb}MB",
           "MD5: #{pkg_mb5}",

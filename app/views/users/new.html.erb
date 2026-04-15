@@ -15,7 +15,7 @@
       <% unless @init_admin %>
         <div class="form-group">
           <label for="plat_name">Type：</label>
-          <%=f.select(:role,{'普通用户'=>'user','管理员'=>'admin'},{},{class:"form-control"}) %>
+          <%=f.select(:role,{'User'=>'user','Administrator'=>'admin'},{},{class:"form-control"}) %>
         </div>
       <% else %>
         <%= hidden_field_tag "user[role]", 'admin' %>
@@ -29,6 +29,6 @@
         <%= f.password_field :password, class:"form-control", required:true %>
       </div>
       
-    <%=f.submit @user.persisted? ? "Keep" : "New", class:"btn btn-primary ui-plat"%>
+    <%=f.submit @user.persisted? ? "Save" : "New", class:"btn btn-primary ui-plat"%>
   <%end%>
 </div>

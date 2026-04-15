@@ -18,7 +18,7 @@
         <key>PayloadOrganization</key>
         <string>apple.com</string>
         <key>PayloadDisplayName</key>
-        <string>APP HOST</string>
+        <string>ANBS APP STORE</string>
         <key>PayloadVersion</key>
         <integer>1</integer>
         <key>PayloadUUID</key>
